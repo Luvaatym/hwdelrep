@@ -4,6 +4,26 @@ public class Program
 {
     public static void Main()
     {
+        Console.WriteLine(RemoveTensDigit(345));  // 305
+
+        Console.WriteLine(GetChessCellColor(1, 1)); // Черная
+        Console.WriteLine(GetChessCellColor(2, 1)); // Белая
+
+
+        Console.WriteLine(CountRealRoots(1, -3, 2)); // 2
+
+
+        Console.WriteLine(Min(3.5, 2.1)); // 2.1
+
+
+        Console.WriteLine(ProductOfEvenNumbers(2, 6)); // 48
+
+
+        var result = AnalyzeNumbers(3, 1, 3, 6, 2, 9, 0);
+        Console.WriteLine($"Меньше K: {result.lessThanK}, Делятся на K: {result.divisibleByK}");
+
+
+        PrintRandomMonths(5);
     }
 
     /*Дано трехзначное число. Обнулить в нем разряд десятков.*/
