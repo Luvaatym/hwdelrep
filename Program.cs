@@ -43,4 +43,29 @@ public class Program
         return a < b ? a : b;
     }
     /*Создать функцию, которая возвращает минимум из двух переданных вещественных чисел. */
+    public static double ProductOfEvenNumbers(int a, int b)
+    {
+        if (a > b)
+        {
+            int temp = a;
+            a = b;
+            b = temp;
+        }
+
+        double product = 1;
+        bool hasEven = false;
+
+        for (int i = a; i <= b; i++)
+        {
+            if (i % 2 == 0)
+            {
+                product *= i;
+                hasEven = true;
+            }
+        }
+
+        return hasEven ? product : 0;
+    }
+    /*Даны целые числа A и B. Найти произведение всех чётных целых чисел от A до B включительно.*/
+
 }
