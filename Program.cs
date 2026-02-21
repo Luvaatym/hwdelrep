@@ -109,5 +109,20 @@ public class Program
         };
     }
     /*Описать перечислимый тип Seasons (времена года). Создать метод, который по номеру месяца [1..12] возвращает время года.*/
+    public static void PrintRandomMonths(int n)
+    {
+        if (n <= 0)
+            throw new ArgumentException("N должно быть положительным.");
 
+        Random random = new Random();
+
+        for (int i = 0; i < n; i++)
+        {
+            int month = random.Next(1, 13);
+            Seasons season = GetSeason(month);
+
+            Console.WriteLine($"Месяц №{month}, его сезон: {season}");
+        }
+    }
+    /*Описать метод, выводящий на консоль N строк "Месяц №<номер месяца>, его сезон: <сезон для этого месяца>". Номера месяцев генерируются случайно.*/
 }
