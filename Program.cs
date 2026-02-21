@@ -67,5 +67,25 @@ public class Program
         return hasEven ? product : 0;
     }
     /*Даны целые числа A и B. Найти произведение всех чётных целых чисел от A до B включительно.*/
+    public static (int lessThanK, int divisibleByK) AnalyzeNumbers(int k, params int[] numbers)
+    {
+        int lessCount = 0;
+        int divisibleCount = 0;
+
+        foreach (int num in numbers)
+        {
+            if (num == 0)
+                break;
+
+            if (num < k)
+                lessCount++;
+
+            if (num % k == 0)
+                divisibleCount++;
+        }
+
+        return (lessCount, divisibleCount);
+    }
+    /*Дано целое число K и набор ненулевых целых чисел; признак его завершения — число 0. Вычислить количество чисел в наборе, меньших K, а также количество чисел, делящихся на K нацело*/
 
 }
