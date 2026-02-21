@@ -87,5 +87,27 @@ public class Program
         return (lessCount, divisibleCount);
     }
     /*Дано целое число K и набор ненулевых целых чисел; признак его завершения — число 0. Вычислить количество чисел в наборе, меньших K, а также количество чисел, делящихся на K нацело*/
+    public enum Seasons
+    {
+        Winter,
+        Spring,
+        Summer,
+        Autumn
+    }
+
+    public static Seasons GetSeason(int month)
+    {
+        if (month < 1 || month > 12)
+            throw new ArgumentOutOfRangeException("Месяц должен быть от 1 до 12.");
+
+        return month switch
+        {
+            12 or 1 or 2 => Seasons.Winter,
+            3 or 4 or 5 => Seasons.Spring,
+            6 or 7 or 8 => Seasons.Summer,
+            _ => Seasons.Autumn
+        };
+    }
+    /*Описать перечислимый тип Seasons (времена года). Создать метод, который по номеру месяца [1..12] возвращает время года.*/
 
 }
